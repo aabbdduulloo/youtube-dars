@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#" class="active">About</a></li>
+            <li><a href="#" class="active">work</a></li>
+            <li><a href="#" class="active">contact</a></li>
+            
+        </ul>
+    </header>
+    <section>
+        <img src="./img/stars.png" id="stars">
+        <img src="./img/moon.png" id="moon">
+        <img src="./img/mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="./img/mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+       
+        <div class="container1">
+            <div class="card">
+                <div class="content">
+                    <h2>01</h2>
+                    <h3>Card One</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur 
+                        adipisicing elit. Ut repudiandae rem nesciunt 
+                        aspernatur tempore quae quidem facere voluptate
+                         perferendis. Vero, ipsum. Quaerat, 
+                         necessitatibus consequuntur iste ipsa odit 
+                         minus earum nobis.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <div class="content">
+                    <h2>02</h2>
+                    <h3>Card Two</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur 
+                        adipisicing elit. Ut repudiandae rem nesciunt 
+                        aspernatur tempore quae quidem facere voluptate
+                         perferendis. Vero, ipsum. Quaerat, 
+                         necessitatibus consequuntur iste ipsa odit 
+                         minus earum nobis.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+    
+            <div class="card">
+                <div class="content">
+                    <h2>03</h2>
+                    <h3>Card Three</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur 
+                        adipisicing elit. Ut repudiandae rem nesciunt 
+                        aspernatur tempore quae quidem facere voluptate
+                         perferendis. Vero, ipsum. Quaerat, 
+                         necessitatibus consequuntur iste ipsa odit 
+                         minus earum nobis.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    
+
+
+    <script src="vanilla titl js.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll('.card'),{
+            max:25,
+            speed:400,
+            glare:true,
+            "min-glare":.4,
+        });
+    </script>
+    <script>
+        let stars = document.getElementById(`stars`);
+        let moon = document.getElementById(`moon`);
+        let mountains_behind = document.getElementById(`mountains_behind`);
+        let text = document.getElementById(`text`)
+        let btn = document.getElementById(`btn`);
+        let mountains_front = document.getElementById(`mountains_front`);
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            btn.style.margintop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+            
+        })
+    </script>
+</body>
+</html>
